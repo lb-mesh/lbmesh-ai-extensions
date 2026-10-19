@@ -1,8 +1,8 @@
 # LBMesh MCP Server
 
-Expose LBMesh container orchestration tools directly to your local AI clients (Cursor, Claude Desktop, Claude Code).
+Expose LBMesh container orchestration tools directly to your local AI clients (Cursor, Claude Desktop, Claude Code). Claude Desktop setup is documented below; other clients to follow.
 
-> **Status:** The server implementation is not yet released. This README documents the intended interface.
+> **Status:** The server skeleton exists, but all tools are stubs that return "not implemented yet". This README documents the intended interface.
 
 ## Installation
 
@@ -27,3 +27,12 @@ Add the following configuration block to your Claude Desktop configuration file:
 - `lbmesh_up`: Spin up any recipe (e.g., PostgreSQL, Redis, custom taps) with automatic port broker remapping.
 - `lbmesh_down`: Teardown active container services and prune bridges.
 - `lbmesh_list_recipes`: View available Cascading Recipe Registry templates.
+
+## Development
+
+The server speaks MCP over stdio (JSON-RPC on stdin/stdout). From this directory:
+
+```bash
+go build ./...
+go test ./...
+```
