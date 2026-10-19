@@ -1,3 +1,4 @@
 ai-plugins-*
 .vscode
 .dockerignore
+handoff-task-*
